@@ -159,13 +159,105 @@ class ControlForm extends React.Component {
 
 }
 
+// Levantar el estado
 
+const InputCelsius = props => {
+
+  const handleChange = (event) => {
+    props.onTempertureChange(event);
+  }
+
+  return (
+    <React.Fragment>
+      <label>Enter celcius</label>
+      <input value = {props.temp} onChange = {handleChange}></input>
+    </React.Fragment>
+  )
+}
+
+const InputFarenheit = props => {
+  
+  const handleChange = (event) => {
+    props.onTempertureChange(event);
+  }
+
+  return (
+    <React.Fragment>
+        <label>Enter Farenheit</label>
+        <input value = {props.temp} onChange = {handleChange}></input>
+    </React.Fragment>
+  )
+}
+
+//Functions to convert from celcius to farenheit and viseversa
+
+function celcius(num) {
+  return (num * 9)/5 + 32;
+}
+
+function farenheit(num) {
+  return (num - 32)*5/ 9;
+}
+
+function tryToConvert(temperature, medida) {
+  return medida(temperature);
+}
+
+//Base
+
+class Base extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      temperature: 0,
+      scale: 'c'
+    }
+  }
+
+  handleCelciusChange = (event) => {
+
+    this.setState({ 
+      temperature: event.target.value,
+      scale: 'c'
+    })
+  }
+
+  handleFarenheitChange = (event) => {
+
+    this.setState({
+      temperature: event.target.value,
+      scale: 'f'
+    })
+  }
+
+  render() {
+    
+    const temperature = this.state.temperature;
+    const medida = this.state.scale;
+
+    const faren = 'c' == medida ? tryToConvert(temperature, celcius): temperature;
+    const celc = 'f' == medida ? tryToConvert(temperature, farenheit): temperature;
+    
+    console.log (`faren : ${faren}`);
+    console.log (`celcius : ${celc}`);
+
+    return (
+      <React.Fragment>
+        <InputCelsius  temp={temperature}  onTempertureChange={this.handleCelciusChange}/>
+        <InputFarenheit temp={temperature} onTempertureChange={this.handleFarenheitChange} />
+      </React.Fragment>  
+    )
+  }
+  
+}
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <ControlForm />
+    <Base />
   </React.StrictMode>,
   document.getElementById('root')
 );
