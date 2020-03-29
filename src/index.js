@@ -258,7 +258,7 @@ class Base extends React.Component {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Entrada />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
