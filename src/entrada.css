@@ -1,0 +1,109 @@
+
+.DayPicker-Caption {
+    background-color: #e6e6e6;
+    padding: .5rem .5rem;
+    margin-bottom: 0;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.DayPicker-wrapper {
+    border-radius: 30px;
+    background-color: #f2f2f2;
+    padding-bottom: 0;
+}
+
+.DayPicker-NavBar {
+    position: relative;
+}
+
+.DayPicker-NavButton {
+    top: .5rem;
+}
+
+.DayPicker-NavButton--prev {
+    position: absolute;
+    left: 2rem;
+    top: .5rem,
+}
+
+.DayPicker-NavButton--next {
+    position: absolute;
+    right: 2rem;
+    top: .5rem,
+}
+
+.DayPicker-NavButton--interactionDisabled {
+    display: block;
+}
+
+.DayPicker-WeekdaysRow {
+    background-color: #ebebeb;
+}
+
+.DayPicker-Weekday {
+    color: black;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.DayPicker-Day--birthday {
+    background-color: #00bcd4;
+    color: white;
+}
+
+.DayPicker-Month {
+      margin: 0 0;
+      
+}
+
+.DayPicker-Day {
+      padding: .8rem 2rem;
+      border-radius: 0;
+}
+
+.DayPicker-Day--today {
+    color: white;
+    background-color: #65c1ae;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #65c1ae;
+}
+
+.DayPicker-Day--monday {
+    color: #00bcd4;
+}
+
+.DayPicker-Day--thursdays {
+      color: purple;
+      
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    position: relative;
+  
+    background-color: #dcdcdc;
+    color: black;
+    border: 1px solid #00000000;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside)::before {
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    height: 10px;
+    width: 10px;
+    background-color: teal;
+    color: teal;
+    border-radius: 50%;
+
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+    background-color: #dcdcdc;
+  }
+
+
+DayPicker-day--firstOfMonth {
+    color: 'white';
+    background-color: yellow;
+}

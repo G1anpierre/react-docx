@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Entrada from './Entrada';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -257,7 +258,7 @@ class Base extends React.Component {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Base />
+    <Entrada />
   </React.StrictMode>,
   document.getElementById('root')
 );
